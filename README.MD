@@ -56,7 +56,7 @@ chmod +x ~/src/outbox-s3-sync/scripts/send_notes_outbox_to_s3.command
 3) 設定
 - BUCKET="YOUR-BUCKET-NAME"
 - S3_PREFIX_BASE="raw"（通常はそのまま）
-⚠️ AWSアクセスキーなどの秘密情報はコミットしないこと。
+- > ⚠️ AWSアクセスキーなどの秘密情報はコミットしないこと。
 
 4) 実行
 ```bash
@@ -69,8 +69,7 @@ chmod +x ~/src/outbox-s3-sync/scripts/send_notes_outbox_to_s3.command
 - ログは ~/sync-logs/ にでる。
 
 ## よくあるトラブル
-1) 認証エラー
-Mac で以下が通るか要確認。
+1) 認証エラー -> Mac で以下が通るか要確認。
 
 ```bash
 aws s3 ls
