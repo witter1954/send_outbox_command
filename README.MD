@@ -46,10 +46,12 @@ iPhone/iPad のショートカットで iCloud Drive に吐き出したメモ（
 1) リポジトリを配置
 ```bash
 git clone https://github.com/<you>/<repo>.git ~/src/outbox-s3-sync
+```
 
 2) 実行権限を付与
 ```bash
 chmod +x ~/src/outbox-s3-sync/scripts/send_notes_outbox_to_s3.command
+```
 
 3) 設定
 BUCKET="YOUR-BUCKET-NAME"
@@ -59,7 +61,7 @@ S3_PREFIX_BASE="raw"（通常はそのまま）
 4) 実行
 ```bash
 ~/src/outbox-s3-sync/scripts/send_notes_outbox_to_s3.command
-
+```
 
 最初に Dry-run（送信候補）が表示されます
 y を入力するとアップロードを実行します
@@ -72,11 +74,12 @@ Mac で以下が通るか要確認。
 
 ```bash
 aws s3 ls
-
+```
 
 macOS が実行をブロックする（quarantine）
 ```bash
 xattr -dr com.apple.quarantine ~/src/outbox-s3-sync
+```
 
 セキュリティメモ
 IAM は最小権限（対象バケット + raw/notes/ だけ書ける等）を推奨
