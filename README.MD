@@ -63,26 +63,26 @@ S3_PREFIX_BASE="raw"（通常はそのまま）
 ~/src/outbox-s3-sync/scripts/send_notes_outbox_to_s3.command
 ```
 
-最初に Dry-run（送信候補）が表示されます
-y を入力するとアップロードを実行します
-成功したファイルのみ _sent に移動します
-ログは ~/sync-logs/ に出ます
+- 最初に Dry-run（送信候補）が表示されます
+- y を入力するとアップロードを実行します
+- 成功したファイルのみ _sent に移動します
+- ログは ~/sync-logs/ に出ます
 
-よくあるトラブル
-認証エラー
+## よくあるトラブル
+1) 認証エラー
 Mac で以下が通るか要確認。
 
 ```bash
 aws s3 ls
 ```
 
-macOS が実行をブロックする（quarantine）
+2) macOS が実行をブロックする（quarantine）
 ```bash
 xattr -dr com.apple.quarantine ~/src/outbox-s3-sync
 ```
 
-セキュリティメモ
-IAM は最小権限（対象バケット + raw/notes/ だけ書ける等）を推奨
-iPhone/iPad には AWS の鍵を置かない運用にする
+## セキュリティメモ
+- IAM は最小権限（対象バケット + raw/notes/ だけ書ける等）を推奨
+- iPhone/iPad には AWS の鍵を置かない運用にする
 
 
